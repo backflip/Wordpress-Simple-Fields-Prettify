@@ -3,7 +3,7 @@
 Simple Fields (http://wordpress.org/extend/plugins/simple-fields/) is a incredibly useful plugin, e.g. for repeating field groups. However, 
 * The default edit view is not as clearly arranged as it could be. With large repeating field groups a collapse functionality comes in handy.
 * It links to external jQuery UI files, making it slow to work offline since the browser is trying to load them for some time.
-* When used in combination with Custom Field Template (http://wordpress.org/extend/plugins/custom-field-template/), media files are not inserted properly (apparently due to "conflicting" media_send_to_editor hooks). *However*, I just realized that there is absolutely no need of using them both since Simple Fields is capable of showing any number of repeatable field groups on a page.
+* When used in combination with Custom Field Template (http://wordpress.org/extend/plugins/custom-field-template/), media files are not inserted properly (apparently due to "conflicting" media_send_to_editor hooks). *However*, I just realized that there is absolutely no need of using them both since Simple Fields is capable of showing any number of repeatable field groups on a page. Whoups.
 
 Tested on WordPress 3.1 using Simple Fields 0.3.6 (and Custom Field Template 1.8.3).
 
