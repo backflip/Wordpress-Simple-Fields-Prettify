@@ -4,6 +4,7 @@
 			wrapper	: '.simple-fields-meta-box-field-group-wrapper',
 			add		: '.simple-fields-metabox-field-add',
 			group 	: '.simple-fields-metabox-field-group',
+			field 	: '.simple-fields-metabox-field',
 			handle	: '.simple-fields-metabox-field-group-handle',
 			del		: '.simple-fields-metabox-field-group-delete',
 			editor	: '.simple_fields_editor_switch'
@@ -42,6 +43,7 @@
 					group.find('.sfp-inner').toggle();
 				});
 				
+				group.find(selectors.field).addClass('sfp-field');
 				group.find(selectors.del).addClass('sfp-delete');
 				group.find(selectors.editor).addClass('sfp-editor');
 			});

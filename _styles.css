@@ -84,10 +84,20 @@ Field groups */
 /* ---------------------------    
 Fields */
 
-#post-body .simple-fields-metabox-field {
-	padding-left: 8em;
+#post-body .sfp-field {
+	padding-left: 9em;
 }
-#post-body .simple-fields-metabox-field label {
+#post-body .sfp-field:after {
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#post-body .sfp-field label {
 	float: left;
-	margin-left: -8em;
+	line-height: 1.3;
+	margin-left: -9em;
+	padding-top: 0.4em;
+	width: 8em;
 }
