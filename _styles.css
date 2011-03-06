@@ -4,7 +4,11 @@
 
 
 #post-body .sfp-wrapper {
+	padding: 0 0.5em;
 	position: relative;
+}
+#post-body .sfp-wrapper-repeatable {
+	padding: 0;
 }
 
 
@@ -16,7 +20,7 @@ Navigation */
 	margin: 0;
 	position: absolute;
 	right: 30px;
-	top: -35px;
+	top: -29px;
 	z-index: 10;
 }
 #post-body .sfp-toggle {
@@ -57,7 +61,7 @@ Navigation */
 /* tinyMCE switch */
 #post-body .sfp-editor {
 	float: right;
-	padding: 7px 25px 5px 0;
+	padding: 7px 45px 5px 0;
 }
 
 
@@ -65,7 +69,8 @@ Navigation */
 Field groups */
 
 #post-body .sfp-group {
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
+	margin-top: 0;
 	padding: 0;
 }
 #post-body .sfp-inner {
@@ -74,6 +79,7 @@ Field groups */
 
 /* Title */
 #post-body .sfp-handle {
+	display: block;
 	float: none;
 	height: auto;
 	margin: 0;

@@ -1,22 +1,30 @@
 (function($){
 
 	var selectors = { 
-			wrapper	: '.simple-fields-meta-box-field-group-wrapper',
-			add		: '.simple-fields-metabox-field-add',
-			group 	: '.simple-fields-metabox-field-group',
-			field 	: '.simple-fields-metabox-field',
-			handle	: '.simple-fields-metabox-field-group-handle',
-			del		: '.simple-fields-metabox-field-group-delete',
-			editor	: '.simple_fields_editor_switch'
-		},
+			wrapper		: '.simple-fields-meta-box-field-group-wrapper',
+			add			: '.simple-fields-metabox-field-add',
+			repeatable	: '.simple-fields-metabox-field-group-fields-repeatable',
+			group 		: '.simple-fields-metabox-field-group',
+			field 		: '.simple-fields-metabox-field',
+			handle		: '.simple-fields-metabox-field-group-handle',
+			del			: '.simple-fields-metabox-field-group-delete',
+			editor		: '.simple_fields_editor_switch'
+		}
 		
-		// Definition of custom CSS classes 
-		// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)
-		wrapper = $(selectors.wrapper).addClass('sfp-wrapper');
-
+	// Most elements get custom CSS classes 
+	// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)	
+		
 	function initFieldGroups(){
+		$(selectors.wrapper).each(function(){
+			var wrapper = $(this).addClass('sfp-wrapper'),
+				repeatable = (wrapper.find(selectors.repeatable).length) ? true : false;
+				
+			if (repeatable) {
+				wrapper.addClass('sfp-wrapper-repeatable');
+			}
+				
 			// Add button to toggle field groups (e.g. for easier sorting)
-			if (!$('.sfp-toggle').length) {
+			if (repeatable && !wrapper.find('.sfp-toggle').length && wrapper.find(selectors.group).length) {
 				var toggle = $('<div class="sfp-toggle">Toggle</div>');
 			
 				toggle.prependTo(wrapper).click(function(){
@@ -26,7 +34,7 @@
 			}
 			
 			// Wrap each field group in additional container and add standard WP classes to apply default styles
-			$(selectors.group).each(function(){
+			wrapper.find(selectors.group).each(function(){
 				var group 	= $(this).addClass('sfp-group'),
 					title 	= 'Field group ' + (group.index()+1),
 					handle 	= $('<div class="handlediv">&nbsp;</div>');
@@ -35,19 +43,23 @@
 					group.find('.sfp-handle h3').text(title);
 					return true;
 				}
-					
-				group.wrapInner('<div class="sfp-inner" />').addClass('postbox');
-				group.find(selectors.handle).addClass('sfp-handle').prependTo(group).text(title).wrapInner('<h3 />');
 				
-				handle.prependTo(group).click(function(){
-					group.find('.sfp-inner').toggle();
-				});
+				if (repeatable) {
+					group.wrapInner('<div class="sfp-inner" />').addClass('postbox');
+					group.find(selectors.handle).addClass('sfp-handle').prependTo(group).text(title).wrapInner('<h3 />');
+					
+					handle.prependTo(group).click(function(){
+						group.find('.sfp-inner').toggle();
+					});
+					
+					group.find(selectors.del).addClass('sfp-delete');
+				}
 				
 				group.find(selectors.field).addClass('sfp-field');
-				group.find(selectors.del).addClass('sfp-delete');
 				group.find(selectors.editor).addClass('sfp-editor');
 			});
-		}
+		});
+	}
 	
 	initFieldGroups();
 	
