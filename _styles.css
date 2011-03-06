@@ -1,14 +1,16 @@
-#post-body .sfp-group {
-	margin-bottom: 0;
-	padding: 0;
-}
-#post-body .sfp-inner {
-	padding: 1em;
-}
+/* 
+	#post-body selector is used in order to safely overwrite other definitions 
+*/
+
 
 #post-body .sfp-wrapper {
 	position: relative;
 }
+
+
+/* ---------------------------    
+Navigation */
+
 #post-body .sfp-add,
 #post-body .sfp-toggle {
 	margin: 0;
@@ -20,6 +22,10 @@
 #post-body .sfp-toggle {
 	cursor: pointer;
 	right: 80px;
+}
+#post-body .sfp-delete {
+	left: 100px;
+	top: 2px;
 }
 #post-body .sfp-delete a,
 #post-body .sfp-add a,
@@ -43,27 +49,40 @@
 #post-body .sfp-toggle:hover {
 	color: #D54E21;
 }
+
 #post-body .sfp-delete a:hover {
 	background-color: #D54E21;
 }
-	
 
+/* tinyMCE switch */
+#post-body .sfp-editor {
+	float: right;
+	padding: 7px 25px 5px 0;
+}
+
+
+/* ---------------------------    
+Field groups */
+
+#post-body .sfp-group {
+	margin-bottom: 0;
+	padding: 0;
+}
+#post-body .sfp-inner {
+	padding: 1em;
+}
+
+/* Title */
 #post-body .sfp-handle {
 	float: none;
 	height: auto;
 	margin: 0;
 	width: auto;
 }
-#post-body .sfp-delete {
-	left: 100px;
-	top: 2px;
-}
 
-#post-body .sfp-editor {
-	float: right;
-	padding: 7px 25px 5px 0;
-}
 
+/* ---------------------------    
+Fields */
 
 #post-body .simple-fields-metabox-field {
 	padding-left: 8em;

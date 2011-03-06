@@ -9,8 +9,8 @@
 			editor	: '.simple_fields_editor_switch'
 		},
 		
-		// Define custom CSS classes for _styles.css 
-		// (otherwise both _script.js and _styles.css would have to be updated whenever a class changes)
+		// Definition of custom CSS classes 
+		// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)
 		wrapper = $(selectors.wrapper).addClass('sfp-wrapper');
 
 	function initFieldGroups(){
@@ -24,7 +24,7 @@
 				});
 			}
 			
-			// Wrap each field group in additional container and add standard WP classes
+			// Wrap each field group in additional container and add standard WP classes to apply default styles
 			$(selectors.group).each(function(){
 				var group 	= $(this).addClass('sfp-group'),
 					title 	= 'Field group ' + (group.index()+1),

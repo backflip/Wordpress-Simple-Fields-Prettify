@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Simple Fields Prettify
-Plugin URI: http://github.com
-Description: Changes edit view of the fantastic Simple Fields plugin, removes dependency on jQuery UI CDN and bypasses an issue with the Custom Field Template plugin
-Version: 0.1
-Author: Thomas Jaggi
-Author URI: http://backflip.info
-License: GLP2
+	Plugin Name: Simple Fields Prettify
+	Plugin URI: http://github.com
+	Description: Changes edit view of the fantastic Simple Fields plugin, removes dependency on external jQuery UI files and bypasses an issue with the Custom Field Template plugin.
+	Version: 0.1
+	Author: Thomas Jaggi
+	Author URI: http://backflip.info
+	License: GLP2
 */
 
 /*  Copyright 2011  Simple Fields Prettify  (thomas@backflip.info)
@@ -44,7 +44,7 @@ function my_plugin_admin_init() {
 	wp_register_style('simple-fields-prettify', plugins_url('/_styles.css', __FILE__));
 	wp_enqueue_style('simple-fields-prettify');
 	
-	// Overwrite links to the jQuery UI CDN in order to work offline
+	// Overwrite links to external jQuery UI files in order to make it work offline
 	wp_enqueue_script("jquery-ui-effects-core", plugins_url('/jquery-ui/effects.core.js', __FILE__));
 	wp_enqueue_script("jquery-ui-effects-highlight", plugins_url('/jquery-ui/effects.highlight.js', __FILE__));
 }
@@ -52,7 +52,8 @@ function my_plugin_admin_init() {
 add_action( 'admin_init', 'my_plugin_admin_init' );
 
 
-// media_send_to_editor hooks don't play well with eachother --> change priorities
+// media_send_to_editor hooks don't play well with each other (SF 0.3.6, CFT 1.8.3)
+// --> priorities changed (based on some trial and error, may break with future versions of both plugins)
 
 if (my_is_plugin_active('custom-field-template/custom-field-template.php')) {
 	add_filter('media_send_to_editor', 'media_send_to_custom_field', 14);
