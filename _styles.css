@@ -1,0 +1,74 @@
+#post-body .sfp-group {
+	margin-bottom: 0;
+	padding: 0;
+}
+#post-body .sfp-inner {
+	padding: 1em;
+}
+
+#post-body .sfp-wrapper {
+	position: relative;
+}
+#post-body .sfp-add,
+#post-body .sfp-toggle {
+	margin: 0;
+	position: absolute;
+	right: 30px;
+	top: -35px;
+	z-index: 10;
+}
+#post-body .sfp-toggle {
+	cursor: pointer;
+	right: 80px;
+}
+#post-body .sfp-delete a,
+#post-body .sfp-add a,
+#post-body .sfp-toggle {
+	background-color: #fff;
+	border: 1px solid #dfdfdf;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+	display: inline-block;
+	padding: 0.35em 0.5em;
+	text-decoration: none;
+}
+#post-body .sfp-delete a {
+	opacity: 1;
+	padding: 0.2em 0.9em 0.2em 0.9em;
+	width: auto;
+}
+#post-body .sfp-add a:hover,
+#post-body .sfp-toggle:hover {
+	color: #D54E21;
+}
+#post-body .sfp-delete a:hover {
+	background-color: #D54E21;
+}
+	
+
+#post-body .sfp-handle {
+	float: none;
+	height: auto;
+	margin: 0;
+	width: auto;
+}
+#post-body .sfp-delete {
+	left: 100px;
+	top: 2px;
+}
+
+#post-body .sfp-editor {
+	float: right;
+	padding: 7px 25px 5px 0;
+}
+
+
+#post-body .simple-fields-metabox-field {
+	padding-left: 8em;
+}
+#post-body .simple-fields-metabox-field label {
+	float: left;
+	margin-left: -8em;
+}
