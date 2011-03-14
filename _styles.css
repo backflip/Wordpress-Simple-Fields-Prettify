@@ -93,6 +93,9 @@ Fields */
 #post-body .sfp-field {
 	padding-left: 9em;
 }
+#post-body .sfp-field-checkbox {
+	padding-left: 0;
+}
 #post-body .sfp-field:after {
 	content: ".";
     display: block;
@@ -106,4 +109,10 @@ Fields */
 	margin-left: -9em;
 	padding-top: 0.4em;
 	width: 8em;
+}
+#post-body .sfp-field-checkbox label {
+	float: none;
+	margin-left: 0;
+	padding-top: 0;
+	width: auto;
 }

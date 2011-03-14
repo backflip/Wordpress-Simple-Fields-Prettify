@@ -11,17 +11,17 @@
 			editor		: '.simple_fields_editor_switch'
 		}
 		
-	// Most elements get custom CSS classes 
-	// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)	
-		
 	function initFieldGroups(){
 		$(selectors.wrapper).each(function(){
+			// Most elements get custom CSS classes 
+			// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)
 			var wrapper = $(this).addClass('sfp-wrapper'),
 				repeatable = (wrapper.find(selectors.repeatable).length) ? true : false;
 				
 			if (repeatable) {
 				wrapper.addClass('sfp-wrapper-repeatable');
 			}
+				
 				
 			// Add button to toggle field groups (e.g. for easier sorting)
 			if (repeatable && !wrapper.find('.sfp-toggle').length && wrapper.find(selectors.group).length) {
@@ -43,6 +43,9 @@
 					group.find('.sfp-handle h3').text(title);
 					return true;
 				}
+				
+				// Custom styling for checkboxes
+				group.find('.simple-fields-for-checkbox').parent().addClass('sfp-field-checkbox');
 				
 				if (repeatable) {
 					group.wrapInner('<div class="sfp-inner" />').addClass('postbox');
