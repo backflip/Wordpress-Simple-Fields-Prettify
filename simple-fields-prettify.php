@@ -1,7 +1,7 @@
 <?php
 /*
 	Plugin Name: Simple Fields Prettify
-	Plugin URI: http://github.com
+	Plugin URI: http://github.com/backflip/Wordpress-Simple-Fields-Prettify
 	Description: Changes edit view of the fantastic Simple Fields plugin, removes dependency on external jQuery UI files and bypasses an issue with the Custom Field Template plugin.
 	Version: 0.1
 	Author: Thomas Jaggi
@@ -26,10 +26,12 @@
 */
 
 
-// is_plugin_active does not work for some reason
+// is_plugin_active does not work for some reason and cannot be redeclared
 
-function my_is_plugin_active($plugin) {
-    return in_array($plugin, (array) get_option( 'active_plugins', array()));
+if (!function_exists(my_is_plugin_active)) {
+	function my_is_plugin_active($plugin) {
+	    return in_array($plugin, (array) get_option('active_plugins', array()));
+	}
 }
 
 if (!my_is_plugin_active('simple-fields/simple_fields.php')) return;
@@ -37,8 +39,8 @@ if (!my_is_plugin_active('simple-fields/simple_fields.php')) return;
 
 // Add script and styles
 
-function my_plugin_admin_init() {
-	wp_register_script('simple-fields-prettify', plugins_url('/_script.js', __FILE__), '', false, true);
+function simple_fields_prettify_init() {
+	wp_register_script('simple-fields-prettify', plugins_url('/_script.js', __FILE__), array(), false, true);
 	wp_enqueue_script('simple-fields-prettify');
 	
 	wp_register_style('simple-fields-prettify', plugins_url('/_styles.css', __FILE__));
@@ -49,7 +51,7 @@ function my_plugin_admin_init() {
 	wp_enqueue_script("jquery-ui-effects-highlight", plugins_url('/jquery-ui/effects.highlight.js', __FILE__));
 }
 
-add_action( 'admin_init', 'my_plugin_admin_init' );
+add_action('admin_init', 'simple_fields_prettify_init');
 
 
 // media_send_to_editor hooks don't play well with each other (SF 0.3.6, CFT 1.8.3)
