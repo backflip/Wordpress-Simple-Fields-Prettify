@@ -2,7 +2,7 @@
 /*
 	Plugin Name: Simple Fields Prettify
 	Plugin URI: http://github.com/backflip/Wordpress-Simple-Fields-Prettify
-	Description: Changes edit view of the fantastic Simple Fields plugin, removes dependency on external jQuery UI files and bypasses an issue with the Custom Field Template plugin.
+	Description: Changes edit view of the fantastic Simple Fields plugin, removes dependency on external jQuery UI files, fixes an issue with sortables on plugin admin page and bypasses an issue with the Custom Field Template plugin.
 	Version: 0.1
 	Author: Thomas Jaggi
 	Author URI: http://backflip.info

@@ -1,5 +1,18 @@
+/*
+	Plugin administration: 
+	Sortable not working properly when handle positioned outside draggable element
+*/
+
+ul.simple-fields-edit-field-groups-added-fields li {
+	padding-left: 16px;
+}
+
+
+
 /* 
-	#post-body selector is used in order to safely overwrite other definitions 
+	Page & post editing:
+	Adapted styling for increased usability
+	#post-body selector used in order to safely overwrite other definitions 
 */
 
 
@@ -94,7 +107,7 @@ Fields */
 	padding-left: 9em;
 }
 #post-body .sfp-field-checkbox {
-	padding-left: 0;
+	padding: 0.5em 0;
 }
 #post-body .sfp-field:after {
 	content: ".";
@@ -112,6 +125,7 @@ Fields */
 }
 #post-body .sfp-field-checkbox label {
 	float: none;
+	font-weight: bold;
 	margin-left: 0;
 	padding-top: 0;
 	width: auto;

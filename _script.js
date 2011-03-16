@@ -11,17 +11,19 @@
 			editor		: '.simple_fields_editor_switch'
 		}
 		
+	/* 
+		Most elements receive custom CSS classes.
+		Otherwise both _script.js and _styles.css would have to be updated whenever a selector changed in the original plugin.
+	*/
+		
 	function initFieldGroups(){
 		$(selectors.wrapper).each(function(){
-			// Most elements get custom CSS classes 
-			// (otherwise both _script.js and _styles.css would have to be updated whenever a selector changed)
 			var wrapper = $(this).addClass('sfp-wrapper'),
 				repeatable = (wrapper.find(selectors.repeatable).length) ? true : false;
 				
 			if (repeatable) {
 				wrapper.addClass('sfp-wrapper-repeatable');
 			}
-				
 				
 			// Add button to toggle field groups (e.g. for easier sorting)
 			if (repeatable && !wrapper.find('.sfp-toggle').length && wrapper.find(selectors.group).length) {
@@ -33,7 +35,7 @@
 				});
 			}
 			
-			// Wrap each field group in additional container and add standard WP classes to apply default styles
+			// Wrap each field group in additional container and add standard WP classes to apply "default" styles
 			wrapper.find(selectors.group).each(function(){
 				var group 	= $(this).addClass('sfp-group'),
 					title 	= 'Field group ' + (group.index()+1),
