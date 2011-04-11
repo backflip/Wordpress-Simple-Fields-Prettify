@@ -123,7 +123,11 @@ Fields */
 	padding-top: 0.4em;
 	width: 8em;
 }
-#post-body .sfp-field-checkbox label {
+#post-body .sfp-field-radiobutton label {
+	padding-top: 0;
+}
+#post-body .sfp-field-checkbox label,
+#post-body .sfp-field-radiobutton div label {
 	float: none;
 	font-weight: bold;
 	margin-left: 0;

@@ -46,8 +46,9 @@
 					return true;
 				}
 				
-				// Custom styling for checkboxes
+				// Custom styling for checkboxes / radiobuttons
 				group.find('.simple-fields-for-checkbox').parent().addClass('sfp-field-checkbox');
+				group.find('.simple-fields-metabox-field-radiobutton').parent().addClass('sfp-field-radiobutton');
 				
 				if (repeatable) {
 					group.wrapInner('<div class="sfp-inner" />').addClass('postbox');
